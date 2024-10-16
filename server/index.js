@@ -7,6 +7,9 @@ const port = 3000
 
 const server = http.createServer(app);
 const io= new SocketServer(server)
+io.on('connection',socket =>{
+    console.log('Client connected')
+})
 
 server.listen(port);
 console.log("server listening on port"+port);
